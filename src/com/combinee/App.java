@@ -5,68 +5,68 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class App {
-    
+
     public App() {
         BtnOne.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                String BtnOneText  = txtDisplay.getText() + BtnOne.getText();
+                String BtnOneText  = BtnOne.getText();
                 txtDisplay.setText( BtnOneText );
             }
         });
         BtnTwo.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                String BtnTwoText  = txtDisplay.getText() + BtnTwo.getText();
+                String BtnTwoText  = BtnTwo.getText();
                 txtDisplay.setText( BtnTwoText );
             }
         });
         BtnThree.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                String BtnThreeText  = txtDisplay.getText() + BtnThree.getText();
+                String BtnThreeText  = BtnThree.getText();
                 txtDisplay.setText( BtnThreeText );
             }
         });
         BtnFour.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                String BtnFourText  = txtDisplay.getText() + BtnFour.getText();
+                String BtnFourText  = BtnFour.getText();
                 txtDisplay.setText( BtnFourText );
             }
         });
         BtnFive.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                String BtnFiveText  = txtDisplay.getText() + BtnFive.getText();
+                String BtnFiveText  = BtnFive.getText();
                 txtDisplay.setText( BtnFiveText );
             }
         });
         BtnSix.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                String BtnSixText  = txtDisplay.getText() + BtnSix.getText();
+                String BtnSixText  = BtnSix.getText();
                 txtDisplay.setText( BtnSixText );
             }
         });
         BtnSeven.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                String BtnSevenText  = txtDisplay.getText() + BtnSeven.getText();
+                String BtnSevenText  = BtnSeven.getText();
                 txtDisplay.setText( BtnSevenText );
             }
         });
         BtnEight.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                String BtnEightText  = txtDisplay.getText() + BtnEight.getText();
+                String BtnEightText  = BtnEight.getText();
                 txtDisplay.setText( BtnEightText );
             }
         });
         BtnNine.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                String BtnNineText  = txtDisplay.getText() + BtnNine.getText();
+                String BtnNineText  = BtnNine.getText();
                 txtDisplay.setText( BtnNineText );
             }
         });
@@ -91,7 +91,7 @@ public class App {
         BtnZero.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                String BtnZeroText  = txtDisplay.getText() + BtnZero.getText();
+                String BtnZeroText  = BtnZero.getText();
                 txtDisplay.setText( BtnZeroText );
             }
         });
@@ -108,19 +108,19 @@ public class App {
             @Override
             public void actionPerformed(ActionEvent e) {
                 switch (math_operator){
-                    case '+':
+                    case "+":
                         total2 = total1 + Double.parseDouble(txtDisplay.getText());
                         break;
-                    case '-':
+                    case "-":
                         total2 = total1 - Double.parseDouble(txtDisplay.getText());
                         break;
-                    case '*':
+                    case "*":
                         total2 = total1 * Double.parseDouble(txtDisplay.getText());
                         break;
-                    case '/':
+                    case "/":
                         total2 = total1 / Double.parseDouble(txtDisplay.getText());
                         break;
-                    case 'sqrt':
+                    case "sqrt":
                             total2 = Math.sqrt(Double.parseDouble(txtDisplay.getText()));
                         break;
                 }
@@ -173,7 +173,7 @@ public class App {
         frame.pack();
         frame.setVisible(true);
     }
-    private char math_operator;
+    private String math_operator;
     private double total1 =0.0;
     private double total2 = 0.0;
     private JPanel Panel1;
@@ -205,7 +205,7 @@ public class App {
     private JButton Btnpwr3;
 
     private void getOperator(String BtnText){
-        math_operator = BtnText.charAt(0);
+        math_operator = BtnText.toString();
         total1 = total2 + Double.parseDouble(txtDisplay.getText());
         txtDisplay.setText("");
     }
