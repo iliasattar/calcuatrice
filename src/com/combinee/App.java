@@ -5,6 +5,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class App {
+    
     public App() {
         BtnOne.addActionListener(new ActionListener() {
             @Override
@@ -72,7 +73,7 @@ public class App {
         BtnPoint.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                String s = e.getActionCommand();
+
                 if(txtDisplay.getText().equals("")){
                     txtDisplay.setText("0.0");
                 }
@@ -84,15 +85,6 @@ public class App {
                 BtnPoint.setEnabled(true);
                 }
 
-                if (s.equals("Sqrt")) {
-                    if (txtDisplay.getText().equals("")){
-                        txtDisplay.setText("");
-                    } else {
-                        a = Math.sqrt(Double.parseDouble(txtDisplay.getText()));
-                        txtDisplay.setText("");
-                        txtDisplay.setText(txtDisplay.getText() + a);
-                    }
-                }
             }
 
         });
@@ -127,6 +119,9 @@ public class App {
                         break;
                     case '/':
                         total2 = total1 / Double.parseDouble(txtDisplay.getText());
+                        break;
+                    case 'sqrt':
+                            total2 = Math.sqrt(Double.parseDouble(txtDisplay.getText()));
                         break;
                 }
                 txtDisplay.setText( Double.toString( total2) );
@@ -166,7 +161,7 @@ public class App {
             @Override
             public void actionPerformed(ActionEvent e) {
                 String button_text = Btnsqrt.getText();
-                txtDisplay.setText(button_text);
+                getOperator(button_text);
             }
         });
     }
