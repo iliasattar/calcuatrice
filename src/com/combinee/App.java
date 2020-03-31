@@ -72,9 +72,9 @@ public class App {
         BtnPoint.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-
+                String s = e.getActionCommand();
                 if(txtDisplay.getText().equals("")){
-                    txtDisplay.setText("0.");
+                    txtDisplay.setText("0.0");
                 }
                 else if(txtDisplay.getText().contains(".")){
                     BtnPoint.setEnabled(false);
@@ -82,6 +82,16 @@ public class App {
                 else {String BtnPointText = txtDisplay.getText() + BtnPoint.getText();
                 txtDisplay.setText(BtnPointText);
                 BtnPoint.setEnabled(true);
+                }
+
+                if (s.equals("Sqrt")) {
+                    if (txtDisplay.getText().equals("")){
+                        txtDisplay.setText("");
+                    } else {
+                        a = Math.sqrt(Double.parseDouble(txtDisplay.getText()));
+                        txtDisplay.setText("");
+                        txtDisplay.setText(txtDisplay.getText() + a);
+                    }
                 }
             }
 
@@ -151,6 +161,14 @@ public class App {
                 getOperator(button_text);
             }
         });
+
+        Btnsqrt.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                String button_text = Btnsqrt.getText();
+                txtDisplay.setText(button_text);
+            }
+        });
     }
 
     public static void main(String[] args) {
@@ -182,6 +200,15 @@ public class App {
     private JButton BtnFour;
     private JButton BtnSeven;
     private JButton BtnPoint;
+    private JButton Btnreverse;
+    private JButton Btnsqrt;
+    private JButton Btnpwr2;
+    private JButton Btnfact;
+    private JButton Btncos;
+    private JButton Btnsin;
+    private JButton Btntan;
+    private JButton Btnpwr3;
+
     private void getOperator(String BtnText){
         math_operator = BtnText.charAt(0);
         total1 = total2 + Double.parseDouble(txtDisplay.getText());
