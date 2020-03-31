@@ -121,8 +121,12 @@ public class App {
                         total2 = total1 / Double.parseDouble(txtDisplay.getText());
                         break;
                     case "sqrt":
-                            total2 = Math.sqrt(Double.parseDouble(txtDisplay.getText()));
+                        total2 = Math.sqrt(Double.parseDouble(txtDisplay.getText()));
                         break;
+                    case "1/":
+                        total2 = 1 / Double.parseDouble(txtDisplay.getText());
+                        break;
+
                 }
                 txtDisplay.setText( Double.toString( total2) );
                 total1=0;
@@ -161,6 +165,17 @@ public class App {
             @Override
             public void actionPerformed(ActionEvent e) {
                 String button_text = Btnsqrt.getText();
+                txtDisplay.setText(button_text);
+                getOperator(button_text);
+            }
+        });
+
+
+        Btnreverse.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent actionEvent) {
+                String button_text = "1/";
+                txtDisplay.setText(button_text);
                 getOperator(button_text);
             }
         });
