@@ -134,7 +134,16 @@ public class App {
                         total2 = Math.pow(Double.parseDouble(txtDisplay.getText()), 3);
                         break;
                     case "cos":
-                        total2 = Math.pow(Double.parseDouble(txtDisplay.getText()), 3);
+                        total2 = Math.cos(Double.parseDouble(txtDisplay.getText()));
+                        break;
+                    case "sin":
+                        total2 = Math.sin(Double.parseDouble(txtDisplay.getText()));
+                        break;
+                    case "tan":
+                        total2 = Math.tan(Double.parseDouble(txtDisplay.getText()));
+                        break;
+                    case "x!":
+                        total2 = fact(Double.parseDouble(txtDisplay.getText()));
                         break;
                 }
                 txtDisplay.setText( Double.toString( total2) );
@@ -213,6 +222,41 @@ public class App {
                 getOperator(button_text);
             }
         });
+        Btnsin.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent actionEvent) {
+                String button_text = "sin";
+                txtDisplay.setText(button_text);
+                getOperator(button_text);
+            }
+        });
+        Btntan.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent actionEvent) {
+                String button_text = "tan";
+                txtDisplay.setText(button_text);
+                getOperator(button_text);
+            }
+        });
+        Btnfact.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent actionEvent) {
+                String button_text = "x!";
+                txtDisplay.setText(button_text);
+                getOperator(button_text);
+            }
+        });
+    }
+    double fact(double x) {
+        int er = 0;
+        if (x < 0) {
+            er = 20;
+            return 0;
+        }
+        double i, s = 1;
+        for (i = 2; i <= x; i += 1.0)
+            s *= i;
+        return s;
     }
 
     public static void main(String[] args) {
