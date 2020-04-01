@@ -7,6 +7,7 @@ import java.awt.event.ActionListener;
 public class App {
 
     public App() {
+
         BtnOne.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -126,7 +127,15 @@ public class App {
                     case "1/":
                         total2 = 1 / Double.parseDouble(txtDisplay.getText());
                         break;
-
+                    case "x^2":
+                        total2 = Math.pow(Double.parseDouble(txtDisplay.getText()), 2);
+                        break;
+                    case "x^3":
+                        total2 = Math.pow(Double.parseDouble(txtDisplay.getText()), 3);
+                        break;
+                    case "cos":
+                        total2 = Math.pow(Double.parseDouble(txtDisplay.getText()), 3);
+                        break;
                 }
                 txtDisplay.setText( Double.toString( total2) );
                 total1=0;
@@ -175,6 +184,31 @@ public class App {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
                 String button_text = "1/";
+                txtDisplay.setText(button_text);
+                getOperator(button_text);
+            }
+        });
+        Btnpwr2.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent actionEvent) {
+                String button_text = "x^2";
+                txtDisplay.setText(button_text);
+                getOperator(button_text);
+            }
+        });
+        Btnpwr3.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent actionEvent) {
+                String button_text = "x^3";
+                txtDisplay.setText(button_text);
+                getOperator(button_text);
+            }
+        });
+
+        Btncos.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent actionEvent) {
+                String button_text = "cos";
                 txtDisplay.setText(button_text);
                 getOperator(button_text);
             }
